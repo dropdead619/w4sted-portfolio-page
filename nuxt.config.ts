@@ -18,5 +18,11 @@ export default defineNuxtConfig({
     },
   },
 
-  modules: ["@nuxt/image"]
+  gtag: {
+    // Your primary Google tag ID
+    enabled: process.env.NODE_ENV !== 'development',
+    id: 'G-070R6E0P3J',
+  },
+
+  modules: ["@nuxt/image", "nuxt-gtag"]
 })
