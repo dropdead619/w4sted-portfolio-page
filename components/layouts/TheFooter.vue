@@ -7,7 +7,7 @@
                 </h3>
 
                 <div class="flex gap-4">
-                    <a v-for="link in links" :key="link.key" :href="link.href"
+                    <a v-for="link in links" :key="link.key" :href="link.href" :aria-label="`Write me on ${link.key}`"
                         class="duration-300 transition-transform hover:scale-105">
                         <component :is="link.icon" class="w-12 h-12" />
                     </a>

@@ -4,6 +4,9 @@ export default defineNuxtConfig({
   css: ['~/assets/css/main.css'],
 
   app: {
+    rootAttrs: {
+      lang: 'en',
+    },
     head: {
       charset: 'utf-8',
       viewport: 'width=device-width, initial-scale=1',
