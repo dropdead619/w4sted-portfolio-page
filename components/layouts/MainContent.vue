@@ -16,7 +16,7 @@
                         </UiBaseBadge>
                     </p>
 
-                    <p>I love to work with newest Frontend tools and try to follow the best coding practices :)</p>
+                    <p>I love to work with newest Frontend tools and try to follow the best coding practices</p>
 
                     <p>
                         Outside of programming, I enjoy writing music, swimming, traveling and playing video games.
