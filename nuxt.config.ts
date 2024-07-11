@@ -10,7 +10,13 @@ export default defineNuxtConfig({
     head: {
       charset: 'utf-8',
       viewport: 'width=device-width, initial-scale=1',
-      title: 'My Frontend Portfolio',
+      title: 'Demezhan Kazhkenov | Vue.js Frontend Developer',
+      meta: [
+        {
+          name: 'description',
+          content: 'Vue.js Frontend Developer from Astana. GMT +5. My main stack is: Vue 3 / Nuxt 3, Typescript, Pinia, TailwindCSS / UnoCSS, Vite.'
+        }
+      ]
     }
   },
 

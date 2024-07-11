@@ -1,7 +1,7 @@
 <template>
-    <div class="py-10 flex flex-col gap-20 justify-between items-center xl:flex-row">
-        <div class="max-w-2xl order-2 lg:order-none" :class="{
-            '!order-2': position === 'right'
+    <div class="py-10 flex flex-col order-2 xl:order-none gap-20 justify-between items-center lg:flex-row">
+        <div class="max-w-2xl" :class="{
+            'xl:order-2': position === 'right'
         }">
             <h3 class="font-semibold text-3xl mb-1">{{ project.title }}</h3>
 
