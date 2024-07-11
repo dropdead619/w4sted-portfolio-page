@@ -5,7 +5,7 @@ import TheHeader from './components/layouts/TheHeader.vue';
 </script>
 
 <template>
-  <div class="h-screen">
+  <div class="h-screen dark:bg-neutral-800 dark:text-white">
     <TheHeader />
     <MainContent />
     <TheFooter />

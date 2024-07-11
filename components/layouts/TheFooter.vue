@@ -1,5 +1,5 @@
 <template>
-    <footer class="w-full text-white bg-neutral-700 py-40">
+    <footer class="w-full text-white bg-neutral-700 py-40 dark:bg-neutral-800">
         <div id="contacts" class="container mx-auto">
             <div class="flex flex-col items-center gap-10">
                 <h3 class="font-semibold text-5xl">

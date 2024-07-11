@@ -1,8 +1,8 @@
 <template>
-    <main class="mt-16">
+    <main class="mt-16 dark:bg-neutral-700">
         <BlocksAboutBlock />
         <BlocksSkillsBlock />
-        <!-- <BlocksProjectsBlock /> -->
+        <BlocksProjectsBlock />
     </main>
 </template>
 

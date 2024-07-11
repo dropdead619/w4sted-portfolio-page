@@ -1,6 +1,9 @@
 <template>
-    <header class="w-full bg-neutral-700 text-white h-16 flex items-center top-0 z-10 fixed">
-        <div class="container mx-auto">
+    <header class="w-full bg-neutral-700 text-white h-16 flex items-center top-0 z-10 fixed dark:bg-neutral-800">
+        <div class="container mx-auto flex items-center">
+            <div>
+                <ThemeSwitcher></ThemeSwitcher>
+            </div>
             <nav class="flex gap-3 items-center ml-auto w-fit">
                 <a v-for="link in navLinks" :href="link.href" :key="link.href"
                     class="transition-colors duration-300 text-gray-200 hover:text-white"
