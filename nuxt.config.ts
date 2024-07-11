@@ -14,7 +14,7 @@ export default defineNuxtConfig({
       meta: [
         {
           name: 'description',
-          content: 'Vue.js Frontend Developer from Astana. GMT +5. My main stack is: Vue 3 / Nuxt 3, Typescript, Pinia, TailwindCSS / UnoCSS, Vite.'
+          content: 'My name is Demezhan, Vue.js Frontend Developer from Astana. GMT +5. My main stack is: Vue 3 / Nuxt 3, Typescript, Pinia, TailwindCSS / UnoCSS, Vite.'
         }
       ]
     }
