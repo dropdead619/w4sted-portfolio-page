@@ -2,7 +2,10 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
   css: ['~/assets/css/main.css'],
-
+  site: {
+    url: 'https://w4sted-portfolio.netlify.app/',
+    trailingSlash: true,
+  },
   app: {
     rootAttrs: {
       lang: 'en',
@@ -37,5 +40,5 @@ export default defineNuxtConfig({
     id: 'G-070R6E0P3J',
   },
 
-  modules: ['@nuxt/image', 'nuxt-gtag', '@vueuse/nuxt',]
+  modules: ['@nuxt/image', 'nuxt-gtag', '@vueuse/nuxt', "@nuxtjs/sitemap"]
 })
