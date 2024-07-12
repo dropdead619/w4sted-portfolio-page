@@ -15,7 +15,11 @@ export default defineNuxtConfig({
         {
           name: 'description',
           content: 'My name is Demezhan, Vue.js Frontend Developer from Astana. GMT +5. My main stack is: Vue 3 / Nuxt 3, Typescript, Pinia, TailwindCSS / UnoCSS, Vite.'
-        }
+        },
+        {
+          name: 'google-site-verification',
+          content: "Gua8rZ2PwIQ1PQgNdsnJZxvZbK9qze1DkM6qi73GUzM"
+        },
       ]
     }
   },
