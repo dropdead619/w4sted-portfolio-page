@@ -3,7 +3,7 @@
         <div id="contacts" class="container mx-auto">
             <div class="flex flex-col items-center gap-10">
                 <h3 class="font-semibold text-5xl">
-                    Contact me via:
+                    {{ t('contactMe') }}
                 </h3>
 
                 <div class="flex gap-4">
@@ -18,6 +18,11 @@
 </template>
 
 <script setup lang="ts">
+const { t } = useI18n({
+    useScope: 'local',
+    
+});
+
 const links = [
     {
         key: 'telegram',
@@ -41,4 +46,14 @@ const links = [
     },
 ];
 
+
 </script>
+
+<i18n lang="json">{
+    "en": {
+        "contactMe": "Contact me"
+    },
+    "ru": {
+        "contactMe": "Свяжитесь со мной"
+    }
+}</i18n>
