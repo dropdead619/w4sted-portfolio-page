@@ -4,32 +4,31 @@
         <div class="flex flex-col gap-10">
             <h1
                 class="text-6xl font-semibold bg-clip-text text-transparent lg:pt-40 bg-gradient-to-r from-green-600 to-blue-300">
-                Vue.js Frontend Developer</h1>
+                {{ $t('aboutBlock.descriptionPostion') }}</h1>
 
             <div class="flex flex-col gap-4 text-lg max-w-2xl">
-                <p>Hey, i am Demezhan Kazhkenov, a Vue.js frontend developer</p>
+                <p> {{ $t('aboutBlock.descriptionName') }}</p>
 
                 <div class="flex gap-2 items-center justify-center lg:justify-normal">
-                    <span>Currently working at:</span>
+                    <span>{{ $t('aboutBlock.currentWork') }}:</span>
                     <UiBaseBadge class="flex gap-1 items-center">
                         <NuxtImg src="/mechta-icon.png" width="24" height="24" alt="Mechta icon" /> Mechta.kz
                     </UiBaseBadge>
                 </div>
 
-                <p>I love to work with newest Frontend tools and try to follow the best coding practices</p>
+                <p>{{ $t('aboutBlock.description') }}</p>
 
                 <p>
-                    Outside of programming, I enjoy writing music, swimming, traveling and playing video games.
+                    {{ $t('aboutBlock.descriptionHobbies') }}
                 </p>
 
-                <p> Right now i live in 📍Astana.</p>
+                <p>{{ $t('aboutBlock.descriptionLocation') }}</p>
             </div>
         </div>
 
         <div class="overflow-hidden rounded-3xl">
             <NuxtImg class="transition-transform  scale-110 duration-300 hover:scale-125" alt="Hero photo" width="600"
                 height="800" loading="lazy" format="webp" :placeholder="[600, 800, 50, 5]" src="/hero-photo.jpg">
-
             </NuxtImg>
         </div>
     </section>

@@ -18,10 +18,7 @@
 </template>
 
 <script setup lang="ts">
-const { t } = useI18n({
-    useScope: 'local',
-    
-});
+const { t } = useI18n();
 
 const links = [
     {
@@ -45,15 +42,4 @@ const links = [
         href: 'mailto:sacrifice619@gmail.com',
     },
 ];
-
-
 </script>
-
-<i18n lang="json">{
-    "en": {
-        "contactMe": "Contact me"
-    },
-    "ru": {
-        "contactMe": "Свяжитесь со мной"
-    }
-}</i18n>

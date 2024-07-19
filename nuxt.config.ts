@@ -3,21 +3,27 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   css: ['~/assets/css/main.css'],
   i18n: {
+    strategy: 'no_prefix',
     locales: [
       {
         code: 'en',
-        name: 'English'
+        name: 'English',
       },
       {
         code: 'ru',
-        name: 'Русский'
+        name: 'Русский',
       },
-    ]
+    ],
+    vueI18n: './i18n.config.ts',
+    differentDomains: false,
+    detectBrowserLanguage: false,
   },
+
   site: {
-    url: 'https://w4sted-portfolio.netlify.app/',
+    url: 'https://demezhan-kazhkenov.dev/',
     trailingSlash: true,
   },
+
   app: {
     rootAttrs: {
       lang: 'en',
@@ -33,7 +39,7 @@ export default defineNuxtConfig({
         },
         {
           name: 'google-site-verification',
-          content: "Gua8rZ2PwIQ1PQgNdsnJZxvZbK9qze1DkM6qi73GUzM"
+          content: "jJ7boRaJW-oAI7AaI16fGCbGNKRuj2TmE4IUrgy3i8M"
         },
       ]
     }
@@ -58,5 +64,7 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     "@nuxtjs/sitemap",
     "@nuxtjs/i18n"
-  ]
+  ],
+
+  compatibilityDate: '2024-07-19'
 })

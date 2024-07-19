@@ -13,18 +13,20 @@
 <script setup lang="ts">
 import type { IProject } from '~/types';
 
+const { t } = useI18n();
+
 const projectsList: IProject[] = [
     {
         id: 0,
         title: 'ERP Tanbalau',
         imgSrc: '/works/tanbalau.jpg',
-        description: 'Внутренняя CRM-система для упрощения маркировки товаров #1',
+        description: t('projectsBlock.tanbalau.description'),
         mainPointsList: [
-            'Верстка экранов по дизайну с помощью UI-библиотеки (Ant-design-vue)',
-            'Перенос проекта с Vue 2 на Vue 3',
-            'Вклад в создание Набора утилит для упрощения работы',
-            'Работа с WebSockets (NCALayer)',
-            'Внес вклад в повышение перфоманса приложения'
+            t('projectsBlock.uiLibAntd'),
+            t('projectsBlock.moveVueVersions'),
+            t('projectsBlock.utilityPoint'),
+            t('projectsBlock.websocketsNca'),
+            t('projectsBlock.perfomanceBoost'),
         ],
         skills: 'Vue 2, Vue 3 (Composition API), Axios, UnoCss, Vite, Pinia, Typescript, Ant Design',
         links: [{
@@ -34,14 +36,14 @@ const projectsList: IProject[] = [
     },
     {
         id: 1,
-        title: 'Forte - Кабинет оценщика',
+        title: t('projectsBlock.forte.title'),
         imgSrc: '/works/forte.jpg',
-        description: 'Внутренняя CRM-система банка',
+        description: t('projectsBlock.forte.description'),
         mainPointsList: [
-            'Проект был написан мной с нуля',
-            'В качестве архитектуры использовал смесь FSD и Modular',
-            'Верстка экранов по макету с помощью кастомной UI-библиотеки',
-            'Имплементировал кастомное решение по генерации отчетов из json структуры',
+            t('projectsBlock.fromScratch'),
+            t('projectsBlock.modularFsd'),
+            t('projectsBlock.uiLibCustom'),
+            t('projectsBlock.forte.jsonStructure'),
         ],
         skills: 'Vue 3 (Composition API) <script/setup>, Axios, UnoCss, Vite, Pinia, Typescript',
     },
@@ -49,13 +51,13 @@ const projectsList: IProject[] = [
         id: 2,
         title: 'Agrosearch',
         imgSrc: '/works/agro.jpg',
-        description: 'Казахстанский маркетплейс зерновых культур',
+        description: t('projectsBlock.agro.description'),
         mainPointsList: [
-            'Верстка экранов по дизайну с помощью кастомной UI-библиотеки',
-            'Билд Android и IOS приложения с помощью Capacitor',
-            'Работа с WebSockets',
-            'Внес вклад в повышение перфоманса приложения',
-            'Улучшил SEO показатели сайта до максимума'
+            t('projectsBlock.uiLibCustom'),
+            t('projectsBlock.capacitorBuild'),
+            t('projectsBlock.websocketsNca'),
+            t('projectsBlock.perfomanceBoost'),
+            t('projectsBlock.improvedSeo'),
         ],
         skills: 'Nuxt 2, Axios, SCSS, Webpack, Vuex, Typescript, Capactior',
         links: [
@@ -77,12 +79,12 @@ const projectsList: IProject[] = [
         id: 3,
         title: 'SaveIt - Business',
         imgSrc: '/works/saveit.png',
-        description: 'CRM система для добавления продукции',
+        description: t('projectsBlock.saveit.description'),
         mainPointsList: [
-            'Проект был написан мной с нуля',
-            'Верстка экранов по дизайну с помощью кастомной UI-библиотеки',
-            'Билд Android и IOS приложения с помощью Capacitor',
-            'Работа с WebSockets',
+            t('projectsBlock.fromScratch'),
+            t('projectsBlock.uiLibCustom'),
+            t('projectsBlock.capacitorBuild'),
+            t('projectsBlock.websocketsNca'),
         ],
         skills: 'Nuxt 2, Axios, SCSS, Webpack, Vuex, Typescript, Capactior',
         links: [
@@ -100,17 +102,17 @@ const projectsList: IProject[] = [
         id: 4,
         title: 'Egistic',
         imgSrc: '/works/egistic.jpg',
-        description: 'Система управления хозяйством',
+        description: t('projectsBlock.egistic.description'),
         mainPointsList: [
-            'Работа с картами',
-            'Работа с WebSockets (Слежка за техникой в режиме реального времени)',
-            'Переписал проект с Vue 2 на Nuxt 3',
-            'Верстка экранов по дизайну с помощью кастомной UI-библиотеки',
-            'Внедрил модульную архитектуру',
-            'Менторил команду из 2х разработчиков',
-            'Проводил code-review',
-            'Использовал паттерны проектирования: DTO, Repository, Decorator',
-            'Улучшил производительность - tree-shaking, vite-optimizations, SSR'
+            t('projectsBlock.egistic.workWithMaps'),
+            t('projectsBlock.egistic.websocketsUsage'),
+            t('projectsBlock.egistic.vueToNuxt'),
+            t('projectsBlock.uiLibCustom'),
+            t('projectsBlock.modularFsd'),
+            t('projectsBlock.egistic.mentoringCount'),
+            t('projectsBlock.codeReview'),
+            t('projectsBlock.patternsUsed') + ': DTO, Repository, Decorator',
+            t('projectsBlock.improvedPerfomance') + ' - tree-shaking, vite-optimizations, SSR'
         ],
         skills: 'Nuxt 3, Vite 5, Pinia, Typescript, Vue3-openlayers',
         links: [
