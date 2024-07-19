@@ -13,7 +13,7 @@
                     <li v-for="point in project.mainPointsList" :key="point">{{ point }}</li>
                 </ol>
                 <p>
-                    <span class="font-semibold">Стек технологий:</span>
+                    <span class="font-semibold">{{ $t('technologyStack') }}:</span>
                     {{ project.skills }}
                 </p>
             </div>

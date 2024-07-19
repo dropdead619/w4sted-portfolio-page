@@ -3,4 +3,4 @@ User-agent: Googlebot
 User-agent: *
 Allow: /
 
-Sitemap: https://w4sted-portfolio.netlify.app/sitemap.xml
+Sitemap: https://demezhan-kazhkenov.dev/sitemap.xml

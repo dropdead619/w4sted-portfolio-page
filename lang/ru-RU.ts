@@ -2,6 +2,7 @@ export default {
     aboutMe: "Обо мне",
     contacts: "Контакты",
     contactMe: "Свяжитесь со мной",
+    technologyStack: "Стек технологий",
 
     aboutBlock: {
         descriptionName: 'Привет, меня зовут Демежан, я Vue.js frontend-разработчик',
