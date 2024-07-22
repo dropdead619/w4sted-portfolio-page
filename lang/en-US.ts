@@ -3,13 +3,15 @@ export default {
     contacts: "Contacts",
     contactMe: "Contact me",
     technologyStack: "Tech stack",
+    myProjects: "My Projects",
+    myStack: "My Main Stack",
 
     aboutBlock: {
         descriptionName: 'Hey, i am Demezhan Kazhkenov, a Vue.js frontend developer',
         currentWork: 'Currently working at',
         description: 'I love to work with newest Frontend tools and try to follow the best coding practices',
         descriptionHobbies: 'Outside of programming, I enjoy writing music, swimming, traveling and playing video games.',
-        descriptionLocation: 'Right now i live in 📍Astana.',
+        descriptionLocation: 'Right now I live in 📍Astana.',
         descriptionPostion: 'Vue.js Frontend Developer',
     },
 

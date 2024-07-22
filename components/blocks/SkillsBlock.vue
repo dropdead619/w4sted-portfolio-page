@@ -1,7 +1,7 @@
 <template>
     <section id="skills" class="bg-gray-100 overflow-hidden dark:bg-neutral-400">
         <div class="container mx-auto py-10">
-            <h3 class="text-center mb-8 text-3xl">My Main Stack:</h3>
+            <h3 class="text-center mb-8 text-3xl">{{ $t('myStack') }}:</h3>
             <ul class="flex flex-wrap justify-center gap-4 mx-auto w-fit">
                 <li v-for="skill in skillset" :key="skill.label">
                     <UiBaseBadge class="flex gap-2 items-center cursor-default">

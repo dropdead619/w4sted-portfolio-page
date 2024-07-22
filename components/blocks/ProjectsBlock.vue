@@ -1,6 +1,6 @@
 <template>
     <section id="projects" class="container mx-auto py-10">
-        <h3 class="text-3xl text-center mb-10">My Projects:</h3>
+        <h3 class="text-3xl text-center mb-10">{{ t('myProjects') }}:</h3>
 
         <template v-for="project, i in projectsList" :key="project.id">
             <BlocksComponentsProjectItem :position="i % 2 === 0 ? 'right' : 'left'" :project="project" />
