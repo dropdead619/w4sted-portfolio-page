@@ -17,35 +17,28 @@ const { t } = useI18n();
 
 const projectsList: IProject[] = [
     {
-        id: 0,
-        title: 'ERP Tanbalau',
-        imgSrc: '/works/tanbalau.jpg',
-        description: t('projectsBlock.tanbalau.description'),
+        id: 4,
+        title: 'Egistic',
+        imgSrc: '/works/egistic.jpg',
+        description: t('projectsBlock.egistic.description'),
         mainPointsList: [
-            t('projectsBlock.uiLibAntd'),
-            t('projectsBlock.moveVueVersions'),
-            t('projectsBlock.utilityPoint'),
-            t('projectsBlock.websocketsNca'),
-            t('projectsBlock.perfomanceBoost'),
-        ],
-        skills: 'Vue 2, Vue 3 (Composition API), Axios, UnoCss, Vite, Pinia, Typescript, Ant Design',
-        links: [{
-            type: 'desktop',
-            href: 'https://tanbalau.kz/',
-        }]
-    },
-    {
-        id: 1,
-        title: t('projectsBlock.forte.title'),
-        imgSrc: '/works/forte.jpg',
-        description: t('projectsBlock.forte.description'),
-        mainPointsList: [
-            t('projectsBlock.fromScratch'),
-            t('projectsBlock.modularFsd'),
+            t('projectsBlock.egistic.workWithMaps'),
+            t('projectsBlock.egistic.websocketsUsage'),
+            t('projectsBlock.egistic.vueToNuxt'),
             t('projectsBlock.uiLibCustom'),
-            t('projectsBlock.forte.jsonStructure'),
+            t('projectsBlock.modularFsd'),
+            t('projectsBlock.egistic.mentoringCount'),
+            t('projectsBlock.codeReview'),
+            t('projectsBlock.patternsUsed') + ': DTO, Repository, Decorator',
+            t('projectsBlock.improvedPerfomance') + ' - tree-shaking, vite-optimizations, SSR'
         ],
-        skills: 'Vue 3 (Composition API) <script/setup>, Axios, UnoCss, Vite, Pinia, Typescript',
+        skills: 'Nuxt 3, Vite 5, Pinia, Typescript, Vue3-openlayers',
+        links: [
+            {
+                type: 'desktop',
+                href: 'https://egistic.kz/',
+            },
+        ]
     },
     {
         id: 2,
@@ -76,6 +69,38 @@ const projectsList: IProject[] = [
         ]
     },
     {
+        id: 0,
+        title: 'ERP Tanbalau',
+        imgSrc: '/works/tanbalau.jpg',
+        description: t('projectsBlock.tanbalau.description'),
+        mainPointsList: [
+            t('projectsBlock.uiLibAntd'),
+            t('projectsBlock.moveVueVersions'),
+            t('projectsBlock.utilityPoint'),
+            t('projectsBlock.websocketsNca'),
+            t('projectsBlock.perfomanceBoost'),
+        ],
+        skills: 'Vue 2, Vue 3 (Composition API), Axios, UnoCss, Vite, Pinia, Typescript, Ant Design',
+        links: [{
+            type: 'desktop',
+            href: 'https://tanbalau.kz/',
+        }]
+    },
+    {
+        id: 1,
+        title: t('projectsBlock.forte.title'),
+        imgSrc: '/works/forte.jpg',
+        description: t('projectsBlock.forte.description'),
+        mainPointsList: [
+            t('projectsBlock.fromScratch'),
+            t('projectsBlock.modularFsd'),
+            t('projectsBlock.uiLibCustom'),
+            t('projectsBlock.forte.jsonStructure'),
+        ],
+        skills: 'Vue 3 (Composition API) <script/setup>, Axios, UnoCss, Vite, Pinia, Typescript',
+    },
+
+    {
         id: 3,
         title: 'SaveIt - Business',
         imgSrc: '/works/saveit.png',
@@ -95,30 +120,6 @@ const projectsList: IProject[] = [
             {
                 type: 'ios',
                 href: 'https://apps.apple.com/kz/app/saveit-%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7-%D0%B5%D0%B4%D1%8B-%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD/id1636452811',
-            },
-        ]
-    },
-    {
-        id: 4,
-        title: 'Egistic',
-        imgSrc: '/works/egistic.jpg',
-        description: t('projectsBlock.egistic.description'),
-        mainPointsList: [
-            t('projectsBlock.egistic.workWithMaps'),
-            t('projectsBlock.egistic.websocketsUsage'),
-            t('projectsBlock.egistic.vueToNuxt'),
-            t('projectsBlock.uiLibCustom'),
-            t('projectsBlock.modularFsd'),
-            t('projectsBlock.egistic.mentoringCount'),
-            t('projectsBlock.codeReview'),
-            t('projectsBlock.patternsUsed') + ': DTO, Repository, Decorator',
-            t('projectsBlock.improvedPerfomance') + ' - tree-shaking, vite-optimizations, SSR'
-        ],
-        skills: 'Nuxt 3, Vite 5, Pinia, Typescript, Vue3-openlayers',
-        links: [
-            {
-                type: 'desktop',
-                href: 'https://egistic.kz/',
             },
         ]
     },
