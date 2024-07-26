@@ -17,9 +17,10 @@
                 'order-1': i % 2 === 0,
             }"></div>
 
-            <div class="relative flex gap-2 w-[500px] p-4 mt-10 rounded-xl border border-neutral-300 bg-white" :class="{
-                'order-3': i % 2 !== 0,
-            }" :style="{
+            <div class="relative flex gap-2 w-full p-4 mt-10 rounded-xl border border-neutral-300 bg-white md:w-[500px]"
+                :class="{
+                    'order-3': i % 2 !== 0,
+                }" :style="{
                 boxShadow: '12px 15px 8px 0px rgba(34, 60, 80, 0.2)',
             }">
                 <NuxtImg width="56" height="56" class="w-14 h-14 border border-neutral-200" format="webp"
