@@ -12,3 +12,13 @@ export interface IProject {
     skills: string
     links?: IProjectLink[]
 }
+
+export interface ITimelineItem {
+    id: number
+    title: string
+    dates: string
+    company: string
+    companyImg?: string
+    mainPointsList: string[]
+    stack: string[]
+}
