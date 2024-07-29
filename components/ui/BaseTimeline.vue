@@ -1,6 +1,7 @@
 <template>
     <ul class="py-1 px-2 text-gray-500 flex flex-col">
-        <li v-for="(item, i) in timelineItems" :key="item.id" class="relative flex flex-row gap-4">
+        <li v-for="(item, i) in timelineItems" :key="item.id" class="relative flex flex-row gap-4"
+            ref="timelineItemsRefs">
             <div class="hidden flex-col items-center md:flex" :class="{
                 'order-1': i % 2 === 0,
                 'order-2': i % 2 !== 0,
@@ -17,14 +18,15 @@
                 'order-1': i % 2 === 0,
             }"></div>
 
-            <div class="relative flex gap-2 w-full p-4 mt-10 rounded-xl border border-neutral-300 bg-white md:w-[500px]"
-                :class="{
-                    'order-3': i % 2 !== 0,
-                }" :style="{
-                boxShadow: '12px 15px 8px 0px rgba(34, 60, 80, 0.2)',
-            }">
-                <NuxtImg width="56" height="56" class="w-14 h-14 border border-neutral-200" format="webp"
-                    :src="item.companyImg" :alt="item.company">
+            <div class="relative flex gap-2 w-full p-4 mt-10 rounded-xl border border-neutral-300 bg-white md:w-[500px] transition-all duration-1000 ease-in-out"
+                :class="[
+                    i % 2 !== 0 ? 'order-3' : '',
+                    getAnimationClass(i),
+                ]" :style="{
+                    boxShadow: '12px 15px 8px 0px rgba(34, 60, 80, 0.2)',
+                }">
+                <NuxtImg width="56" height="56" class="w-14 h-14 border border-neutral-200" :placeholder="[56, 56]"
+                    format="webp" :src="item.companyImg" :alt="item.company">
                 </NuxtImg>
 
                 <div>
@@ -55,7 +57,44 @@
 <script setup lang="ts">
 import type { ITimelineItem } from '~/types';
 
-defineProps<{
+const props = defineProps<{
     timelineItems: ITimelineItem[]
 }>()
+
+const timelineItemsRefs = ref<HTMLLIElement[]>([]);
+const visibleItems = ref<boolean[]>(Array(props.timelineItems.length).fill(false));
+
+const handleIntersection = (entries: IntersectionObserverEntry[], observer: IntersectionObserver) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const index = timelineItemsRefs.value.indexOf(entry.target as HTMLLIElement);
+            visibleItems.value[index] = true;
+            observer.unobserve(entry.target);
+        }
+    });
+};
+
+onMounted(() => {
+    const observer = new IntersectionObserver(handleIntersection, {
+        threshold: 0.7,
+    });
+
+    timelineItemsRefs.value.forEach(item => {
+        observer.observe(item);
+    });
+});
+
+const getAnimationClass = (index: number) => {
+    return visibleItems.value[index] ? 'animate-in' : 'animate-out';
+};
 </script>
+
+<style scoped>
+.animate-in {
+    opacity: 1;
+}
+
+.animate-out {
+    opacity: 0;
+}
+</style>

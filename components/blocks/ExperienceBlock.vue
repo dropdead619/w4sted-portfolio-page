@@ -16,7 +16,7 @@ const timelineItems = [
         dates: 'Apr 2024 - Present',
         title: 'Frontend Technical Leader',
         company: 'Mechta Market LLP · Full-time',
-        companyImg: 'https://media.licdn.com/dms/image/C560BAQH8pWD5_jrIrg/company-logo_200_200/0/1650273388701/mechta_logo?e=1730332800&v=beta&t=YSAUfJC68MmgB4FG8XJvHnYCwqRHwoFYA-95_vzHmg0',
+        companyImg: '/companies/mechta.jpeg',
         mainPointsList: [
             'Created custom template for all projects (Modular + FSD with Typescript and Strong ESLint support)',
             'Move from Javascript to Typescript',
@@ -33,7 +33,7 @@ const timelineItems = [
         dates: 'Oct 2023 - Apr 2024 · 7 mos',
         title: 'Frontend Team Leader',
         company: 'Egistic.kz - Agritech SuperAPP · Full-time',
-        companyImg: 'https://media.licdn.com/dms/image/D4E0BAQEMEld9n_XHsw/company-logo_200_200/0/1689135569054?e=1730332800&v=beta&t=TTM3F0SmQlvuJFkhRJlJPEQVmEepTpzf5SMKP4eDo-c',
+        companyImg: '/companies/egistic.jpeg',
         mainPointsList: [
             'Mentoring frontend team (2 members)',
             'Code reviewing',
@@ -46,7 +46,7 @@ const timelineItems = [
         dates: 'May 2023 - Oct 2024 · 6 mos',
         title: 'Middle Frontend Developer',
         company: 'Egistic.kz - Agritech SuperAPP · Full-time',
-        companyImg: 'https://media.licdn.com/dms/image/D4E0BAQEMEld9n_XHsw/company-logo_200_200/0/1689135569054?e=1730332800&v=beta&t=TTM3F0SmQlvuJFkhRJlJPEQVmEepTpzf5SMKP4eDo-c',
+        companyImg: '/companies/egistic.jpeg',
         mainPointsList: [
             'Move project from Vue 2 to Nuxt 3 ',
             'Introduced new architecture (Modular + FSD)',
@@ -60,7 +60,7 @@ const timelineItems = [
         dates: 'Sep 2022 - May 2023 · 9 mos',
         title: 'Middle Frontend Developer',
         company: 'Rocket Firm | IT production company · Full-time',
-        companyImg: 'https://media.licdn.com/dms/image/D4E0BAQE4CSWpnbKUwA/company-logo_200_200/0/1713160767731/therockettech_logo?e=1730332800&v=beta&t=RNX916fP4vJ-th0H28Vs7G6Ve0G3to5JMUULSjOYKjk',
+        companyImg: '/companies/rocket.jpeg',
         mainPointsList: [
             t('projectsBlock.capacitorBuild'),
             t('projectsBlock.uiLibCustom'),
@@ -74,7 +74,7 @@ const timelineItems = [
         dates: 'Nov 2021 - Sep 2022 · 11 mos',
         title: 'Junior Frontend Developer',
         company: 'QLT LLP · Full-time',
-        companyImg: 'https://media.licdn.com/dms/image/C4D0BAQESIqIotd2rDQ/company-logo_200_200/0/1630513077759/qlt_llp_logo?e=1730332800&v=beta&t=UGcXJkvUNga2lIANbercAB16IWthMrpd2LT0-PtFCsk',
+        companyImg: '/companies/qlt.jpeg',
         mainPointsList: [
             'Developed and maintained frontend features and functionality for CRM projects using VueJs, TypeScript, JavaScript, HTML, CSS, SCSS, and Tailwind.',
             'Collaborated with the development team to design and implement new features and enhancements, as well as troubleshoot and debug issues.',
@@ -91,7 +91,7 @@ const timelineItems = [
         dates: 'Dec 2020 - Oct 2021 · 11 mos',
         title: 'Freelance Software Engineer',
         company: 'Freelance Remote',
-        companyImg: 'https://cdn2.iconfinder.com/data/icons/occupations-2/500/occupation-33-512.png',
+        companyImg: '/companies/freelance.webp',
         mainPointsList: [
             'Developed Landing sites, small applications',
             'Worked closely with UX/UI designers',
