@@ -5,7 +5,7 @@
             <ul class="flex flex-wrap justify-center gap-4 mx-auto w-fit">
                 <li v-for="skill in skillset" :key="skill.label">
                     <UiBaseBadge class="flex gap-2 items-center cursor-default">
-                        <component class="w-10" :is="skill.icon"></component>
+                        <component class="w-fit" :is="skill.icon"></component>
                         <span class="font-semibold">{{ skill.label }}</span>
                     </UiBaseBadge>
                 </li>

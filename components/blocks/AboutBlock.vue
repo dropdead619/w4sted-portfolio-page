@@ -12,7 +12,8 @@
                 <div class="flex gap-2 items-center justify-center lg:justify-normal">
                     <span>{{ $t('aboutBlock.currentWork') }}:</span>
                     <UiBaseBadge class="flex gap-1 items-center">
-                        <NuxtImg src="/mechta-icon.png" width="24" height="24" alt="Mechta icon" /> Mechta.kz
+                        <NuxtImg src="/mechta-icon.png" width="24" height="24" alt="Mechta icon" /> <span
+                            class="dark:text-neutral-200">Mechta.kz</span>
                     </UiBaseBadge>
                 </div>
 

@@ -18,7 +18,7 @@
                 'order-1': i % 2 === 0,
             }"></div>
 
-            <div class="relative flex gap-2 w-full p-4 mt-10 rounded-xl border border-neutral-300 bg-white md:w-[500px] transition-all duration-1000 ease-in-out"
+            <div class="relative flex gap-4 w-full p-5 mt-10 rounded-xl border border-neutral-300 bg-white md:w-[500px] transition-all duration-1000 ease-in-out"
                 :class="[
                     i % 2 !== 0 ? 'order-3' : '',
                     getAnimationClass(i),
@@ -35,7 +35,7 @@
                         <p class="text-neutral-400">{{ item.company }}</p>
                         <time class="text-neutral-400">{{ item.dates }}</time>
                     </div>
-                    <ul class="mt-4">
+                    <ul class="mt-2">
                         <li v-for="pointItem in item.mainPointsList">
                             - {{ pointItem }}
                         </li>
