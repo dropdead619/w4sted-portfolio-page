@@ -87,20 +87,6 @@ const projectsList: IProject[] = [
         }]
     },
     {
-        id: 1,
-        title: t('projectsBlock.forte.title'),
-        imgSrc: '/works/forte.jpg',
-        description: t('projectsBlock.forte.description'),
-        mainPointsList: [
-            t('projectsBlock.fromScratch'),
-            t('projectsBlock.modularFsd'),
-            t('projectsBlock.uiLibCustom'),
-            t('projectsBlock.forte.jsonStructure'),
-        ],
-        skills: 'Vue 3 (Composition API) <script/setup>, Axios, UnoCss, Vite, Pinia, Typescript',
-    },
-
-    {
         id: 3,
         title: 'SaveIt - Business',
         imgSrc: '/works/saveit.png',

@@ -35,6 +35,10 @@ const navLinks = ref<INavItem[]>([
         label: t('aboutMe')
     },
     {
+        href: '#projects',
+        label: t('myProjects')
+    },
+    {
         href: '#contacts',
         label: t('contacts')
     },

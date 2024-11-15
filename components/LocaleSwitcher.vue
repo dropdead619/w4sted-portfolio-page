@@ -7,24 +7,17 @@ const availableLocales = computed(() => {
     return locales.value.filter(i => i.code !== locale.value)
 })
 
-function langFlagIcon(locale: LocaleObject) {
-    switch (locale.code) {
-        case 'ru':
-            return resolveComponent('LazyIconsRuLang');
-        case 'en':
-            return resolveComponent('LazyIconsEngLang');
-        case 'kk':
-            return resolveComponent('LazyIconsKzLang');
-    }
-}
-
 async function changeLocale(localeV: LocaleObject) {
     await setLocale(localeV.code)
 }
 </script>
 
 <template>
-    <component :is="langFlagIcon(locale)" class="cursor-pointer w-5 h-5" v-for="locale in availableLocales"
-        :key="locale.code" @click="changeLocale(locale)">
-    </component>
+    <div class="flex gap-2">
+        <span v-for="loc in locales" :key="loc.code" class="text-gray-400 cursor-pointer" :class="{
+            'text-white': loc.code === locale
+        }" @click="changeLocale(loc)">
+            {{ loc.code.toUpperCase() }}
+        </span>
+    </div>
 </template>
