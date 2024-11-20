@@ -56,6 +56,21 @@ const timelineItems = [
         stack: ['Nuxt 3', 'Typescript', 'Vite', 'Pinia', 'TailwindCss', 'Vue3openlayers'],
     },
     {
+        id: 5,
+        dates: 'Dec 2022 - Oct 2023 · 11 mos',
+        title: 'Freelance Software Engineer',
+        company: 'Freelance Remote - Part-time',
+        companyImg: '/companies/freelance.webp',
+        mainPointsList: [
+            'Developed Landing sites, small applications',
+            'Worked closely with UX/UI designers',
+            'Worked closely with the design team to ensure a seamless integration of user interface and user experience design into the final product.',
+            'Created builds for Android and IOS',
+            'Connected APIs',
+        ],
+        stack: ['Vue 2', 'Nuxt 2', 'Javascript', 'Typescript', 'Webpack', 'Vuex', 'SCSS'],
+    },
+    {
         id: 3,
         dates: 'Sep 2022 - May 2023 · 9 mos',
         title: 'Middle Frontend Developer',
@@ -85,21 +100,6 @@ const timelineItems = [
             'Introduced and implemented Tailwind CSS for a large-scale CRM project, resulting in a streamlined development process and improved code consistency.',
         ],
         stack: ['Vue 2/3', 'Typescript', 'Vite/Webpack', 'Pinia/Vuex', 'SCSS', 'TailwindCss'],
-    },
-    {
-        id: 5,
-        dates: 'Dec 2020 - Oct 2021 · 11 mos',
-        title: 'Freelance Software Engineer',
-        company: 'Freelance Remote',
-        companyImg: '/companies/freelance.webp',
-        mainPointsList: [
-            'Developed Landing sites, small applications',
-            'Worked closely with UX/UI designers',
-            'Worked closely with the design team to ensure a seamless integration of user interface and user experience design into the final product.',
-            'Created builds for Android and IOS',
-            'Connected APIs',
-        ],
-        stack: ['Vue 2', 'Nuxt 2', 'Javascript', 'Typescript', 'Webpack', 'Vuex', 'SCSS'],
     },
 ] as ITimelineItem[]
 
