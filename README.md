@@ -1,75 +1,65 @@
-# Nuxt 3 Minimal Starter
+# demezhan-kazhkenov.dev
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Personal portfolio — Nuxt 3, TypeScript, Tailwind CSS. Deployed on Netlify at
+[demezhan-kazhkenov.dev](https://demezhan-kazhkenov.dev).
 
-## Setup
-
-Make sure to install the dependencies:
+## Getting started
 
 ```bash
-# npm
-npm install
-
-# pnpm
 pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
+pnpm dev        # http://localhost:3000
+pnpm build      # production build
+pnpm preview    # preview the production build
 ```
 
-## Development Server
+Node 22 and pnpm 10 — the same versions pinned in `netlify.toml`.
 
-Start the development server on `http://localhost:3000`:
+## Structure
 
-```bash
-# npm
-npm run dev
+| Path | What lives there |
+| --- | --- |
+| `data/cv.ts` | **All site content.** Profile, experience, projects, skills, education. Edit here, not in components. |
+| `components/blocks/` | Page sections, composed in `layouts/MainContent.vue` |
+| `components/fx/` | Animation primitives (see below) |
+| `components/ui/` | Shared presentational pieces |
+| `composables/useMotion.ts` | Reduced-motion / pointer detection, rAF and scroll-progress helpers |
+| `plugins/reveal.ts` | The `v-reveal` directive |
+| `assets/css/main.css` | Design tokens and motion primitives |
 
-# pnpm
-pnpm run dev
+### Design tokens
 
-# yarn
-yarn dev
+Colours are CSS custom properties on `:root` (light) and `:root.dark`, exposed to
+Tailwind as `bg`, `bg-elev`, `ink`, `muted`, `line`, `accent`, `accent-2`. Change a
+token once and both themes follow.
 
-# bun
-bun run dev
+### Motion
+
+`v-reveal` releases an element from a hidden state when it scrolls into view:
+
+```vue
+<div v-reveal>…</div>
+<div v-reveal="{ delay: 120, y: 40, blur: 10, stagger: 80, index: i }">…</div>
 ```
 
-## Production
+It renders `data-reveal=""` during SSR so nothing flashes in before hydration, shares
+one IntersectionObserver per threshold, and has a failsafe sweep so content can never
+stay permanently hidden.
 
-Build the application for production:
+The `components/fx/` primitives cover masked text reveals (`SplitText`), the
+scroll-linked reading effect (`ScrollReveal`), pointer-tracked tilt (`TiltCard`),
+magnetic hover (`MagneticEl`), decode text (`ScrambleText`), the hero canvas
+(`DotField`), and the intro curtain (`Preloader`).
 
-```bash
-# npm
-npm run build
+Every effect is gated on `prefers-reduced-motion`.
 
-# pnpm
-pnpm run build
+## Images
 
-# yarn
-yarn build
+Images are **pre-optimised WebP committed to `public/opt/`** — there is no runtime
+image service. To add or regenerate one, resize the source with `sharp` (a dev
+dependency) and write the result into `public/opt/`, then reference it from
+`data/cv.ts`. Originals stay in `public/` so they can be re-cropped later.
 
-# bun
-bun run build
-```
+## Deploying
 
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+Pushing to `main` triggers a Netlify production build. Build command and toolchain
+versions live in `netlify.toml`.
