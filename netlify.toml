@@ -1,0 +1,13 @@
+# Build configuration lives here rather than in the Netlify dashboard so the
+# toolchain is pinned alongside the code.
+#
+# The site was previously building on Node 18, which cannot run Vite 7 (needs
+# 20.19+) and pairs with a pnpm too old for this lockfile (v9 format).
+
+[build]
+  command = "pnpm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22"
+  PNPM_VERSION = "10"
