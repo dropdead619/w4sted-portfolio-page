@@ -2,20 +2,244 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ─────────────────────────────────────────────────────────────
+   Design tokens
+   Dark is the default canvas; light is a deliberate inverse.
+   Values are space-separated RGB triples so Tailwind can apply
+   <alpha-value> through them.
+   ───────────────────────────────────────────────────────────── */
+:root {
+  --bg: 246 246 244;
+  --bg-elev: 255 255 255;
+  --ink: 12 12 14;
+  --muted: 96 96 106;
+  --line: 12 12 14;
+  --accent: 8 116 66;
+  --accent-2: 24 86 190;
+  --glow: 8 116 66;
+  --grain: 0.035;
+}
+
+:root.dark {
+  --bg: 8 8 10;
+  --bg-elev: 17 17 21;
+  --ink: 237 237 239;
+  --muted: 132 132 142;
+  --line: 255 255 255;
+  --accent: 124 255 155;
+  --accent-2: 111 178 255;
+  --glow: 124 255 155;
+  --grain: 0.055;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+  }
+
+  body {
+    @apply bg-bg text-ink antialiased;
+    font-family: 'Inter Tight', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+    font-feature-settings: 'ss01', 'cv05';
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background: rgb(var(--accent) / 0.9);
+    color: rgb(var(--bg));
+  }
+
+  :focus-visible {
+    outline: 2px solid rgb(var(--accent));
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  /* The custom cursor replaces the native one on precise pointers only. */
+  @media (hover: hover) and (pointer: fine) {
+    html.has-custom-cursor,
+    html.has-custom-cursor * {
+      cursor: none !important;
+    }
+  }
+}
+
+@layer components {
+  .shell {
+    @apply mx-auto w-full max-w-[1240px] px-5 sm:px-8 lg:px-12;
+  }
+
+  /* Small uppercase mono label used to index every section. */
+  .eyebrow {
+    @apply font-mono text-[11px] uppercase tracking-[0.28em] text-muted;
+  }
+
+  .rule {
+    @apply h-px w-full bg-line/10;
+  }
+
+  .display {
+    font-family: 'Inter Tight', ui-sans-serif, system-ui, sans-serif;
+    font-weight: 800;
+    letter-spacing: -0.045em;
+    line-height: 0.88;
+    text-wrap: balance;
+  }
+
+  .serif-italic {
+    font-family: 'Instrument Serif', ui-serif, Georgia, serif;
+    font-style: italic;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+  }
+
+  /* Hairline card that lifts toward the accent on hover. */
+  .panel {
+    @apply relative rounded-2xl border border-line/10 bg-bg-elev/60 backdrop-blur-sm;
+    transition: border-color 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .panel:hover {
+    @apply border-line/20;
+  }
+
+  .link-underline {
+    background-image: linear-gradient(rgb(var(--accent)), rgb(var(--accent)));
+    background-size: 0% 1px;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .link-underline:hover {
+    background-size: 100% 1px;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    background-image: linear-gradient(
+      100deg,
+      rgb(var(--ink)) 0%,
+      rgb(var(--ink)) 42%,
+      rgb(var(--accent)) 68%,
+      rgb(var(--accent-2)) 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .glow-accent {
+    box-shadow: 0 0 0 1px rgb(var(--accent) / 0.25),
+                0 0 32px -4px rgb(var(--glow) / 0.35),
+                0 0 90px -20px rgb(var(--glow) / 0.5);
+  }
+
+  .mask-fade-y {
+    -webkit-mask-image: linear-gradient(to bottom, transparent, black 12%, black 88%, transparent);
+    mask-image: linear-gradient(to bottom, transparent, black 12%, black 88%, transparent);
+  }
+
+  .mask-fade-x {
+    -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+    mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────
+   Reveal primitives — driven by the v-reveal directive.
+   Elements start hidden and are released once observed.
+   ───────────────────────────────────────────────────────────── */
+[data-reveal] {
+  opacity: 0;
+  transform: translate3d(0, var(--reveal-y, 22px), 0) scale(var(--reveal-s, 1));
+  transition:
+    opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay, 0ms),
+    transform 1s cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay, 0ms),
+    filter 0.9s cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay, 0ms);
+  filter: blur(var(--reveal-blur, 6px));
+  will-change: opacity, transform;
+}
+
+[data-reveal='in'] {
+  opacity: 1;
+  transform: none;
+  filter: blur(0);
+}
+
+/* Masked line reveal: the child slides out from behind a clipped edge. */
+.line-mask {
+  overflow: hidden;
+  display: block;
+}
+
+.line-mask > * {
+  display: block;
+  transform: translate3d(0, 105%, 0) rotate(3deg);
+  transition: transform 1.05s cubic-bezier(0.16, 1, 0.3, 1) var(--reveal-delay, 0ms);
+  transform-origin: left top;
+}
+
+[data-reveal='in'] .line-mask > *,
+.line-mask[data-reveal='in'] > * {
+  transform: none;
+}
+
+@keyframes marquee-x {
+  from { transform: translate3d(0, 0, 0); }
+  to { transform: translate3d(-50%, 0, 0); }
+}
+
+@keyframes pulse-ring {
+  0%   { transform: scale(1);   opacity: 0.75; }
+  70%  { transform: scale(2.4); opacity: 0; }
+  100% { transform: scale(2.4); opacity: 0; }
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50%      { transform: translate3d(0, -14px, 0); }
+}
+
+@keyframes sheen {
+  from { transform: translateX(-120%) skewX(-18deg); }
+  to   { transform: translateX(220%) skewX(-18deg); }
+}
+
+.animate-marquee-x { animation: marquee-x var(--marquee-duration, 42s) linear infinite; }
+.animate-float-slow { animation: float-slow 7s ease-in-out infinite; }
+
+/* Users who ask for less motion get none of it. */
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal],
+  [data-reveal='in'],
+  .line-mask > * {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    transition: none !important;
+  }
+
+  .animate-marquee-x,
+  .animate-float-slow {
+    animation: none !important;
+  }
+}
+
+/* Theme crossfade (View Transitions API) */
 ::view-transition-old(root),
 ::view-transition-new(root) {
   animation: none;
   mix-blend-mode: normal;
 }
-::view-transition-old(root) {
-  z-index: 1;
-}
-::view-transition-new(root) {
-  z-index: 9999;
-}
-.dark::view-transition-old(root) {
-  z-index: 9999;
-}
-.dark::view-transition-new(root) {
-  z-index: 1;
-}
+::view-transition-old(root) { z-index: 1; }
+::view-transition-new(root) { z-index: 9999; }
+.dark::view-transition-old(root) { z-index: 9999; }
+.dark::view-transition-new(root) { z-index: 1; }

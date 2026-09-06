@@ -10,9 +10,7 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
-    "@nuxt/image": "^1.7.0",
-    "@nuxtjs/i18n": "^8.3.1",
-    "@nuxtjs/sitemap": "^5.3.2",
+    "@nuxtjs/sitemap": "^8.5.0",
     "nuxt": "^3.12.2",
     "nuxt-gtag": "^2.0.6",
     "vue": "^3.4.29",
@@ -23,6 +21,7 @@
     "@vueuse/nuxt": "^10.11.0",
     "autoprefixer": "^10.4.19",
     "postcss": "^8.4.38",
+    "sharp": "^0.35.4",
     "tailwindcss": "^3.4.4"
   }
 }

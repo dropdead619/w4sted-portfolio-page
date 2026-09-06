@@ -1,11 +1,10 @@
 <template>
-    <main class="mt-16 dark:bg-neutral-700">
-        <BlocksAboutBlock />
-        <BlocksSkillsBlock />
-        <BlocksExperienceBlock />
-        <BlocksProjectsBlock />
-    </main>
+  <main>
+    <BlocksHeroBlock />
+    <BlocksAboutBlock />
+    <BlocksStackBlock />
+    <BlocksWorkBlock />
+    <BlocksExperienceBlock />
+    <BlocksExtrasBlock />
+  </main>
 </template>
-
-<script setup lang="ts">
-</script>
